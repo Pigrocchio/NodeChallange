@@ -127,31 +127,3 @@ router.put("/updateUsersById/:id", (req, res) => {
 module.exports = router;
 
 
-
-//  User.findOneAndUpdate(
-//    id,
-
-//    {
-//      id: req.body.id,
-//      name: req.body.name,
-//      email: req.body.email,
-//      birthDate: req.body.birthDate,
-//      $set: {
-//        "address.id": req.body.id,
-//        "address.street": req.body.street,
-//        "address.zip": req.body.zip,
-//        "address.state": req.body.state,
-//        "address.country": req.body.country
-//      }
-//    }
-//  )
-//    .then(allUser => {
-//      res.status(200).send(allUser);
-//    })
-//    .catch(err => {
-//      console.log("DB error", err);
-//      res.status(400).send({ msg: "Invalid user Id" });
-//    });
-
-
-

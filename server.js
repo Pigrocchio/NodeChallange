@@ -38,7 +38,7 @@ const swaggerDefinition = {
     version: "1.0.0",
     title: "Users"
   },
-  host: "localhost:3000",
+  host: process.env.SWAGGER_LOCAL_HOST,
   basePath: "/users",
   schemes: ["http", "https"]
 };

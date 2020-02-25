@@ -25,7 +25,7 @@ const Address = require("../models/Address");
 
 router.get("/getUsers", (req, res) => {
   User.find()
-    .then(allUser => res.status(200).json(allUser).send('OK'))
+    .then(allUser => { return res.status(200).json(allUser) })
     .catch(err => console.log("DB error", err));
 });
 
