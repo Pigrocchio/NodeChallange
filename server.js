@@ -1,34 +1,18 @@
 const express = require("express");
-const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerSpec = require("./configs/swagger");
 const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 require("dotenv").config();
 require("./configs/middlewares")(app);
 require("./configs/mongoose");
+require("./configs/swagger");
 
 
 const API_PORT = process.env.PORT || 3000;
 
-//SWAGGER CONFIG
 
-const swaggerDefinition = {
-  info: {
-    description: "Users API",
-    version: "1.0.0",
-    title: "Users"
-  },
-  host: process.env.SWAGGER_LOCAL_HOST,
-  basePath: "/users",
-  schemes: ["https", "http"]
-};
 
-const options = {
-  swaggerDefinition,
-  apis: ["./routes/*.js"]
-};
-
-const swaggerSpec = swaggerJSDoc(options);
 
 
 app.get("/swagger.json", (req, res) => {
