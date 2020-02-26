@@ -1,8 +1,6 @@
 const express = require("express");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const mongoose = require("mongoose");
-const cors = require("cors");
 
 const app = express();
 require("dotenv").config();
@@ -37,20 +35,16 @@ app.get("/swagger.json", (req, res) => {
 });
 
 
+app.get("/", function(req, res) {
+  res.redirect("/api-docs");
+});
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
 app.use("/users", require("./routes/createUser"));
-
 app.use("/users", require("./routes/getusersById"));
-
 app.use("/users", require("./routes/getUsers"));
-
 app.use("/users", require("./routes/deleteUsersById"));
-
 app.use("/users", require("./routes/updateUsersById"));
-
-// eslint-disable-next-line no-console
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
 
 module.exports = app;
