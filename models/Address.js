@@ -32,7 +32,7 @@ const Schema = mongoose.Schema;
 const addressSchema = new Schema(
   {
     id: Number,
-    street: Number,
+    street: String,
     state: String,
     country: String,
     zip: String
