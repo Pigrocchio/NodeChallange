@@ -21,7 +21,7 @@ const swaggerDefinition = {
   },
   host: process.env.SWAGGER_LOCAL_HOST,
   basePath: "/users",
-  schemes: ["http", "https"]
+  schemes: ["https", "http"]
 };
 
 const options = {
