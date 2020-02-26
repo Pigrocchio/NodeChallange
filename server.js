@@ -7,6 +7,7 @@ require("dotenv").config();
 require("./configs/middlewares")(app);
 require("./configs/mongoose");
 
+
 const API_PORT = process.env.PORT || 3000;
 
 //SWAGGER CONFIG
@@ -28,6 +29,7 @@ const options = {
 };
 
 const swaggerSpec = swaggerJSDoc(options);
+
 
 app.get("/swagger.json", (req, res) => {
   res.setHeader("Content-Type", "application/json");
