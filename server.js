@@ -8,7 +8,6 @@ const app = express();
 require("dotenv").config();
 require("./configs/middlewares")(app);
 require("./configs/mongoose");
-require("./configs/swagger");
 
 const API_PORT = process.env.PORT || 3000;
 
@@ -37,7 +36,7 @@ app.get("/swagger.json", (req, res) => {
   res.send(swaggerSpec);
 });
 
-app.use(cors());
+
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
